@@ -5,7 +5,7 @@ const Sales = require('./db/sales');
 const User = require('./db/user');
 const Logs = require('./db/logs');
 const sequelize = require('./db/connect');
-const app = express();
+const app = express(); 
 
 const PORT = 3000;
 
