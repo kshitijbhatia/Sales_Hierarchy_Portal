@@ -18,7 +18,6 @@ const sendAllData = async (req,res,next) =>{
             action_type : 'data.viewed',
             action_description : `${user[0].dataValues.name} viewed the data`
         })
-
         const data = await Sales.findAll();
 
         data.sort((a,b) => {

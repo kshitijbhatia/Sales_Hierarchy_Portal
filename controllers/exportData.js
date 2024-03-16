@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const exportData = async (req,res,next) => {
     try{
+        const token = req.headers.token;
         const sales = await Sales.findAll();
         
         const workbook = new excel.Workbook();
@@ -103,7 +104,7 @@ const exportData = async (req,res,next) => {
 
         worksheet.eachRow({ includeEmpty: true }, (row, rowNumber) => {
             row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
-                cell.alignment = { vertical: 'middle', horizontal: 'left' }; // Set horizontal alignment to left
+                cell.alignment = { vertical: 'middle', horizontal: 'left' }; 
             });
         });
         
